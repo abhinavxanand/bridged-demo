@@ -114,37 +114,55 @@ Response:
 ```
 
 ### Example Queries and Outputs
-
-**Query 1**: "Show me articles by Alice Zhang from last year about machine learning."
 ```json
 {
-  "filter": {
-    "author": "Alice Zhang",
-    "published_year": {"$eq": 2024},
-    "tags": {"$in": ["machine learning"]}
-  }
-}
-```
-
-**Query 2**: "Find posts tagged with 'LLMs' published in June, 2023."
-```json
-{
-  "filter": {
-    "tags": {"$in": ["LLM"]},
-    "published_year": {"$eq": 2023},
-    "published_month": {"$eq": 6}
-  }
-}
-```
-
-**Query 3**: "Anything by John Doe on vector search?"
-```json
-{
-  "filter": {
-    "author": "John Doe",
-    "tags": {"$in": ["vector search"]}
-  }
-}
+            "query": "Show me articles by Jane Doe about IPL 2025.",
+            "expected": {
+                "author": "Jane Doe",
+                "tags": {"$in": ["#IPL2025"]}
+            },
+            "description": "Author + Topic (IPL 2025)"
+        },
+        {
+            "query": "Find posts by Harry Potter published in May 2025.",
+            "expected": {
+                "author": "Harry Potter",
+                "published_year": {"$eq": 2025},
+                "published_month": {"$eq": 5}
+            },
+            "description": "Author + Month + Year"
+        },
+        {
+            "query": "Anything by Mary Poppins about Mumbai Indians?",
+            "expected": {
+                "author": "Mary Poppins",
+                "tags": {"$in": ["#MumbaiIndians"]}
+            },
+            "description": "Author + Team Tag"
+        },
+        {
+            "query": "Show me articles about Rohit Sharma from this year.",
+            "expected": {
+                "tags": {"$in": ["#RohitSharma"]},
+                "published_year": {"$eq": 2025}
+            },
+            "description": "Player Tag + Current Year"
+        },
+        {
+            "query": "Find all IPL injury related posts.",
+            "expected": {
+                "tags": {"$in": ["#IPLInjuries"]}
+            },
+            "description": "Topic-specific Tag Only"
+        },
+        {
+            "query": "Articles by Akainu about cricket health.",
+            "expected": {
+                "author": "Akainu",
+                "tags": {"$in": ["#CricketHealth"]}
+            },
+            "description": "Author + Health Topic"
+        }
 ```
 
 ## Date Format Options
