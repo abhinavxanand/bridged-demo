@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "bridged-demo"
+version = "1.0.0"
+description = "Natural Language to Pinecone Query Agent"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "bridged_demo"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^1.0.0"
+pinecone = "^3.0.0"
+fastapi = "^0.104.0"
+uvicorn = "^0.24.0"
+pandas = "^2.0.0"
+numpy = "^1.24.0"
+pydantic = "^2.0.0"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.0.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100
