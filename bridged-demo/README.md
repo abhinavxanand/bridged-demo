@@ -307,7 +307,7 @@ MIT License - see LICENSE file for details
 ## Support
 
 For questions or issues:
-- Email: rithvik@bridged.media
+- Email: abhinavxanand1@gmail.com
 - Create an issue in the GitHub repository
 
 ## Acknowledgments
